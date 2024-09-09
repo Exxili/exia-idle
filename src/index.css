@@ -1,3 +1,14 @@
-@tailwind base;
+@import "@mantine/core/styles.css";
+/* @import "@mantine/core/styles.css"; */
+@import "@mantine/dates/styles.css";
+
+/* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
+
+/* I want to use this line to set tailwind layer defined below to have a lower priority than Mantine, but it doesn't seem to work. don't know why*/
+@layer tailwind, mantine;
+
+@layer tailwind {
+  @tailwind base;
+}
