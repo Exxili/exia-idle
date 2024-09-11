@@ -1,12 +1,30 @@
-import { IconMoon } from "@tabler/icons-react";
-import { rem } from "@mantine/core";
+import { useMantineColorScheme } from "@mantine/core";
+import { useEffect } from "react";
+import ThemeIcon from "./ThemeIcon";
 
-function StatusBar() {
+/**
+ * Status bar component.
+ * @description A status bar for the main idle game
+ * Allows changing of theme, viewing save state, and other options.
+ * @returns The status bar component.
+ */
+const StatusBar: React.FC = () => {
+  // Hooks
+  const { colorScheme } = useMantineColorScheme();
+
+  useEffect(() => {
+    // Add effect logic here if needed
+  }, []);
+
   return (
-    <div className="h-[40px] bg-zinc-900 w-full flex items-center justify-center">
-      <IconMoon stroke={1.5} color="white" />
+    <div className="h-[40px] w-full flex items-center justify-between p-3">
+      {/* Left side */}
+      <div>Left</div>
+
+      {/* Right side */}
+      <ThemeIcon theme={colorScheme} />
     </div>
   );
-}
+};
 
 export default StatusBar;
